@@ -20,8 +20,8 @@ async function crawlPage(baseURL, currentURL, pages){
 
     try{
         const resp = await fetch(currentURL)
-
-        if(resp.status > 399){
+        code=[100,101,102,200,201,202,203,204,205,206,207,226]
+        if(resp.status > 399 || resp.status in code){
             console.log(`error in fetch with status code: ${resp.status} on page: ${currentURL}`)
             return pages
         }
